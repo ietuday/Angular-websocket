@@ -8,7 +8,8 @@ import {AppRoutes} from './app.routes';
 import {WebSocketService} from './services/web-socket.service';
 import {AuthService} from './services/auth.service';
 import {UploadService} from './services/upload.service';
-
+import {DemoService} from './services/demo.service';
+ import { Ng2MapModule} from 'ng2-map';
 
 import {
     AccordionModule,
@@ -91,6 +92,7 @@ import { HomeComponent } from './home/home.component';
         ReactiveFormsModule,
         AppRoutes,
         HttpModule,
+        Ng2MapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyB3GNhvevVRFy7qpwLjZxxjWRUKp9s2uz4'}),
         AccordionModule,
         AutoCompleteModule,
         BreadcrumbModule,
@@ -158,7 +160,7 @@ import { HomeComponent } from './home/home.component';
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
-        WebSocketService, AuthService, UploadService
+        WebSocketService, AuthService, DemoService, UploadService
     ],
     bootstrap: [AppComponent]
 })
